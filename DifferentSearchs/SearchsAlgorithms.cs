@@ -8,7 +8,7 @@ namespace DifferentSearchs
 {
     public class SearchsAlgorithms
     {
-      public void  DirectSelection(int[] array)
+      public void  DirectExchange(int[] array)
      {
             bool flag = true;
             int counter = 1;
