@@ -38,7 +38,7 @@ namespace DifferentSearchs
         {
             DataGridViewRow dataRow = new DataGridViewRow();
             dataGridView.Rows.Add(dataRow);
-            dataGridView[0, cell].Value = cell;           
+            dataGridView[0, cell].Value = cell.ToString() + " проход";           
             for (int i = 1; i < array.Length+1; i++)
             {
                 dataGridView[i, cell].Value = array[i - 1];

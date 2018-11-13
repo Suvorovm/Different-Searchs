@@ -56,7 +56,7 @@
             this.page.Location = new System.Drawing.Point(3, 1);
             this.page.Name = "page";
             this.page.SelectedIndex = 0;
-            this.page.Size = new System.Drawing.Size(1100, 537);
+            this.page.Size = new System.Drawing.Size(1102, 603);
             this.page.TabIndex = 0;
             // 
             // compareSorting
@@ -71,11 +71,12 @@
             // 
             // directExchange
             // 
+            this.directExchange.Controls.Add(this.buttonSortDirectExchange);
             this.directExchange.Controls.Add(this.dataGridView1);
             this.directExchange.Location = new System.Drawing.Point(4, 25);
             this.directExchange.Name = "directExchange";
             this.directExchange.Padding = new System.Windows.Forms.Padding(3);
-            this.directExchange.Size = new System.Drawing.Size(1092, 508);
+            this.directExchange.Size = new System.Drawing.Size(1094, 574);
             this.directExchange.TabIndex = 1;
             this.directExchange.Text = "Прямой выбор";
             this.directExchange.UseVisualStyleBackColor = true;
@@ -104,7 +105,6 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -113,7 +113,7 @@
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1086, 502);
+            this.dataGridView1.Size = new System.Drawing.Size(1086, 503);
             this.dataGridView1.TabIndex = 0;
             // 
             // Head
@@ -180,7 +180,7 @@
             // buttonSortDirectExchange
             // 
             this.buttonSortDirectExchange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSortDirectExchange.Location = new System.Drawing.Point(433, 544);
+            this.buttonSortDirectExchange.Location = new System.Drawing.Point(475, 512);
             this.buttonSortDirectExchange.Name = "buttonSortDirectExchange";
             this.buttonSortDirectExchange.Size = new System.Drawing.Size(148, 53);
             this.buttonSortDirectExchange.TabIndex = 1;
@@ -194,7 +194,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1105, 603);
-            this.Controls.Add(this.buttonSortDirectExchange);
             this.Controls.Add(this.page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";

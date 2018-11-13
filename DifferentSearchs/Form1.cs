@@ -21,14 +21,17 @@ namespace DifferentSearchs
       
             dataRow.ReadOnly = false;
             dataGridView1.Rows.Add(dataRow);
-            dataGridView1[0, 0].Value = "0";
-
-
+            dataGridView1[0, 0].Value = "0 проход";
         }
 
         private void buttonSortDirectExchange_Click(object sender, EventArgs e)
         {
             int[] array = new int[10];
+            int count = dataGridView1.RowCount;
+            for (int i = 1; i < count; i++)
+            {
+                dataGridView1.Rows.RemoveAt(i);
+            }
             for (int i = 1; i < array.Length+1; i++)
             {
                 array[i - 1] = Int32.Parse(dataGridView1[i, 0].Value.ToString());
