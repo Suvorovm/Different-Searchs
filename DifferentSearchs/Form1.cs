@@ -15,6 +15,10 @@ namespace DifferentSearchs
         public Form1()
         {
             InitializeComponent();
+            DataGridViewRow dataRow = new DataGridViewRow();
+            dataRow.ReadOnly = false;
+            dataGridView1.Rows.Add(dataRow);
+            
         }
     }
 }
