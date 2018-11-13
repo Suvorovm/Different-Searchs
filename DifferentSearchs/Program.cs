@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace DifferentSearchs
 {
+
     static class Program
     {
         /// <summary>
