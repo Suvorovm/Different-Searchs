@@ -121,9 +121,80 @@ namespace DifferentSearchs
                 numOfcell++;
                 array[index] = barier;// после выполнения сдвига, ставится за эллемент
             }
+            AddTotabel(dataGridView, array, numOfcell);
         }
 
 
+        /// <summary>
+        /// Сортировка путем прямого выбора
+        /// </summary>
+        /// <param name="array">Сортируемый массив</param>
+        public void DirectChange(int[] array)
+        {
+            if(array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+            int needToLook = array.Length-1;
+            int max = array[0];
+            int indexMax = 0;
+            int temprory = 0;
+            while(needToLook > 0)
+            {
+                for (int i = 0; i <= needToLook; i++)
+                {
+                    if(max < array[i])
+                    {
+                        max = array[i];
+                        indexMax = i;
+                    }                                            
+                }
+                
+                temprory = array[needToLook];
+                array[needToLook] = array[indexMax];
+                array[indexMax] = temprory;
+                needToLook--;
+                max = array[needToLook];
+            }
+
+        }
+
+        /// <summary>
+        /// Сортировка путем прямого выбора. С интерфейсом
+        /// </summary>
+        /// <param name="array">Массив</param>
+        /// <param name="dataGridView">таблица</param>
+        public void DirectChange(int[] array, DataGridView dataGridView)
+        {
+            if (array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+            int cell= 1;
+            int needToLook = array.Length - 1;
+            int max = array[0];
+            int indexMax = 0;
+            int temprory = 0;
+            while (needToLook > 0)
+            {
+                for (int i = 0; i <= needToLook; i++)
+                {
+                    if (max < array[i])
+                    {
+                        max = array[i];
+                        indexMax = i;
+                    }
+                }
+
+                temprory = array[needToLook];
+                array[needToLook] = array[indexMax];
+                array[indexMax] = temprory;
+                needToLook--;
+                max = array[needToLook];
+                AddTotabel(dataGridView, array, cell);
+            }
+
+        }
 
     }
 }

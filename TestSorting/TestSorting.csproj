@@ -51,6 +51,7 @@
     <Compile Include="TestDirect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DirectInclude.cs" />
+    <Compile Include="DirectChange.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
