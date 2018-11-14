@@ -53,7 +53,7 @@ namespace DifferentSearchs
         {
             int[] array = new int[10];
 
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 1; i < array.Length+1; i++)
             {
                 array[i - 1] = Int32.Parse(dataGridDirectInclude[i, 0].Value.ToString());
             }
