@@ -9,6 +9,10 @@ namespace DifferentSearchs
 {
     public class SearchsAlgorithms
     {
+        /// <summary>
+        /// Метод сортировки путем прямого выбора
+        /// </summary>
+        /// <param name="array">Сортируемый массив</param>
       public void  DirectExchange(int[] array)
      {
             bool flag = true;
@@ -47,7 +51,11 @@ namespace DifferentSearchs
                 dataGridView[i, cell].Value = array[i - 1];
             }
         }
-
+        /// <summary>
+        /// для работы с интрефесом
+        /// </summary>
+        /// <param name="array">Массив</param>
+        /// <param name="dataGridView">Таблица</param>
         public void DirectExchange(int[] array,DataGridView dataGridView)
         {
             bool flag = true;
@@ -68,6 +76,26 @@ namespace DifferentSearchs
                 }
                 AddTotabel(dataGridView,array, counter);                
                 counter++;
+            }
+        }
+        /// <summary>
+        /// Метод сортировки путем прямого включения
+        /// </summary>
+        /// <param name="array">Сортируемый массив</param>
+        public void DirectInclude(int[] array)
+        {
+            int index = 0;
+            int value = 0;
+            for (int i = 1; i < array.Length; i++)
+            {
+                index = i;
+                value = array[i];
+                while ((index>0)&& (value<array[index-1]))
+                {
+                    array[index] = array[index - 1];
+                    index--;
+                }
+                array[index] = value;// после выполнения сдвига, ставится за эллемент
             }
         }
 
