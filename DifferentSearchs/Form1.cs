@@ -26,6 +26,11 @@ namespace DifferentSearchs
             dataRownclude.ReadOnly = false;
             dataGridDirectInclude.Rows.Add(dataRownclude);
             dataGridDirectInclude[0, 0].Value = "0 проход";
+
+            DataGridViewRow directChange = new DataGridViewRow();
+            directChange.ReadOnly = false;
+            dataGridViewDirectChange.Rows.Add(directChange);
+            dataGridViewDirectChange[0, 0].Value = "0 проход";
         }
 
         private void buttonSortDirectExchange_Click(object sender, EventArgs e)
@@ -67,6 +72,26 @@ namespace DifferentSearchs
             }
             dataGridDirectInclude.Refresh();
             searchsAlgorithms.DirectInclude(array, dataGridDirectInclude);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int[] array = new int[10];
+
+            for (int i = 1; i < array.Length + 1; i++)
+            {
+                array[i - 1] = Int32.Parse(dataGridViewDirectChange[i, 0].Value.ToString());
+            }
+            dataGridViewDirectChange.Rows.Clear();
+            DataGridViewRow data = new DataGridViewRow();
+            dataGridViewDirectChange.Rows.Add(data);
+            dataGridViewDirectChange[0, 0].Value = "0 проход";
+            for (int i = 1; i < array.Length + 1; i++)
+            {
+                dataGridViewDirectChange[i, 0].Value = array[i - 1];
+            }
+            dataGridViewDirectChange.Refresh();
+            searchsAlgorithms.DirectInclude(array, dataGridViewDirectChange);
         }
     }
 }
