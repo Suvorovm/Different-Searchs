@@ -10,7 +10,7 @@ namespace DifferentSearchs
     public class SearchsAlgorithms
     {
         /// <summary>
-        /// Метод сортировки путем прямого выбора
+        /// Метод сортировки путем прямого обмена
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
       public void  DirectExchange(int[] array)
@@ -52,7 +52,7 @@ namespace DifferentSearchs
             }
         }
         /// <summary>
-        /// для работы с интрефесом
+        /// для работы с интрефесом.Прямой обмен.
         /// </summary>
         /// <param name="array">Массив</param>
         /// <param name="dataGridView">Таблица</param>
@@ -122,6 +122,8 @@ namespace DifferentSearchs
                 array[index] = barier;// после выполнения сдвига, ставится за эллемент
             }
         }
+
+
 
     }
 }
