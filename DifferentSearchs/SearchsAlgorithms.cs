@@ -36,8 +36,11 @@ namespace DifferentSearchs
        /// </summary>
         private void AddTotabel(DataGridView dataGridView,int[] array,int cell)
         {
-            DataGridViewRow dataRow = new DataGridViewRow();
-            dataGridView.Rows.Add(dataRow);
+            if (cell >= dataGridView.Rows.Count)
+            {
+                DataGridViewRow dataRow = new DataGridViewRow();
+                dataGridView.Rows.Add(dataRow);
+            }
             dataGridView[0, cell].Value = cell.ToString() + " проход";           
             for (int i = 1; i < array.Length+1; i++)
             {
