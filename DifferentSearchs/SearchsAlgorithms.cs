@@ -98,6 +98,30 @@ namespace DifferentSearchs
                 array[index] = value;// после выполнения сдвига, ставится за эллемент
             }
         }
+        /// <summary>
+        /// Метод сортировки путем прямого включения.Сортировка для работы с интерфесом
+        /// </summary>
+        /// <param name="array">Массив</param>
+        /// <param name="dataGridView">Таблица</param>
+        public void DirectInclude(int[] array, DataGridView dataGridView)
+        {
+            int index = 0;
+            int barier = 0;//барьер
+            int numOfcell = 1;
+            for (int i = 1; i < array.Length; i++)
+            {
+                index = i;
+                barier = array[i];
+                while ((index > 0) && (barier < array[index - 1]))
+                {
+                    array[index] = array[index - 1];
+                    index--;
+                }
+                AddTotabel(dataGridView,array, numOfcell);
+                numOfcell++;
+                array[index] = barier;// после выполнения сдвига, ставится за эллемент
+            }
+        }
 
     }
 }

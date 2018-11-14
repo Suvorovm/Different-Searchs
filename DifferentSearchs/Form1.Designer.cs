@@ -45,6 +45,7 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.directInclude = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridDirectInclude = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,7 +103,7 @@
             this.buttonSortDirectExchange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSortDirectExchange.Location = new System.Drawing.Point(475, 512);
             this.buttonSortDirectExchange.Name = "buttonSortDirectExchange";
-            this.buttonSortDirectExchange.Size = new System.Drawing.Size(148, 53);
+            this.buttonSortDirectExchange.Size = new System.Drawing.Size(171, 53);
             this.buttonSortDirectExchange.TabIndex = 1;
             this.buttonSortDirectExchange.Text = "Сортировать";
             this.buttonSortDirectExchange.UseVisualStyleBackColor = true;
@@ -206,6 +207,7 @@
             // 
             // directInclude
             // 
+            this.directInclude.Controls.Add(this.button1);
             this.directInclude.Controls.Add(this.dataGridDirectInclude);
             this.directInclude.Location = new System.Drawing.Point(4, 25);
             this.directInclude.Name = "directInclude";
@@ -213,6 +215,17 @@
             this.directInclude.TabIndex = 2;
             this.directInclude.Text = "Прямое включение";
             this.directInclude.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(408, 512);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(212, 53);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Сортировать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dataGridDirectInclude
             // 
@@ -360,6 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.Button button1;
     }
 }
 
