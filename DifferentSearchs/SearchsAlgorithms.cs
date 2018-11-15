@@ -222,5 +222,30 @@ namespace DifferentSearchs
             }
         }
 
+        public void SortingByShell(int[] array,DataGridView dataGridView)
+        {
+        
+            int  temrory, j = 0;
+            int countOfcell = 1;
+            int d = array.Length / 3;
+            while (d > 0)
+            {
+                for (int i = 0; i < array.Length - d; i++)
+                {
+                    j = i;
+                    while (j >= 0 && array[j] > array[j + d])
+                    {
+                        temrory = array[j];
+                        array[j] = array[j + d];
+                        array[j + d] = temrory;
+                        j--;
+                    }
+                }
+                AddTotabel(dataGridView, array, countOfcell);
+                countOfcell++;
+                d = d / 3;
+            }
+        }
+
     }
 }
