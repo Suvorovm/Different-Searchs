@@ -73,8 +73,19 @@
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonShell = new System.Windows.Forms.Button();
             this.SortingByShell = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +96,6 @@
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonShell = new System.Windows.Forms.Button();
             this.page.SuspendLayout();
             this.directExchange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -486,6 +496,17 @@
             this.tabPage1.Text = "Сортировка Шелла";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // buttonShell
+            // 
+            this.buttonShell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShell.Location = new System.Drawing.Point(433, 512);
+            this.buttonShell.Name = "buttonShell";
+            this.buttonShell.Size = new System.Drawing.Size(179, 53);
+            this.buttonShell.TabIndex = 4;
+            this.buttonShell.Text = "Сортировать";
+            this.buttonShell.UseVisualStyleBackColor = true;
+            this.buttonShell.Click += new System.EventHandler(this.buttonShell_Click);
+            // 
             // SortingByShell
             // 
             this.SortingByShell.AllowUserToAddRows = false;
@@ -500,6 +521,16 @@
             this.SortingByShell.ColumnHeadersVisible = false;
             this.SortingByShell.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn23,
+            this.Column1,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26,
@@ -531,6 +562,56 @@
             this.dataGridViewTextBoxColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn23.Width = 75;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Column12";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Column13";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Column14";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Column15";
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Column16";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Column17";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Column18";
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Column19";
+            this.Column19.Name = "Column19";
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Column20";
+            this.Column20.Name = "Column20";
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -581,16 +662,6 @@
             // 
             this.dataGridViewTextBoxColumn33.HeaderText = "";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            // 
-            // buttonShell
-            // 
-            this.buttonShell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShell.Location = new System.Drawing.Point(433, 512);
-            this.buttonShell.Name = "buttonShell";
-            this.buttonShell.Size = new System.Drawing.Size(179, 53);
-            this.buttonShell.TabIndex = 4;
-            this.buttonShell.Text = "Сортировать";
-            this.buttonShell.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -665,6 +736,16 @@
         private System.Windows.Forms.Button buttonShell;
         private System.Windows.Forms.DataGridView SortingByShell;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;

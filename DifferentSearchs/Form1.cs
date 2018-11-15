@@ -31,6 +31,10 @@ namespace DifferentSearchs
             directChange.ReadOnly = false;
             dataGridViewDirectChange.Rows.Add(directChange);
             dataGridViewDirectChange[0, 0].Value = "0 проход";
+
+            DataGridViewRow dataRowShell = new DataGridViewRow();
+            SortingByShell.Rows.Add(dataRowShell);
+            SortingByShell[0, 0].Value = "0 проход";
         }
 
         private void buttonSortDirectExchange_Click(object sender, EventArgs e)
@@ -92,6 +96,25 @@ namespace DifferentSearchs
             }
             dataGridViewDirectChange.Refresh();
             searchsAlgorithms.DirectInclude(array, dataGridViewDirectChange);
+        }
+
+        private void buttonShell_Click(object sender, EventArgs e)
+        {
+            int[] array = new int[20];
+            for (int i = 1; i < array.Length; i++)
+            {
+                array[i - 1] = Int32.Parse(SortingByShell[i, 0].Value.ToString());
+            }
+            SortingByShell.Rows.Clear();
+            DataGridViewRow data = new DataGridViewRow();
+            SortingByShell.Rows.Add(data);
+            SortingByShell[0, 0].Value = "0 проход";
+            for (int i = 1; i < array.Length + 1; i++)
+            {
+                SortingByShell[i, 0].Value = array[i - 1];
+            }
+            SortingByShell.Refresh();
+            searchsAlgorithms.DirectInclude(array, SortingByShell);
         }
     }
 }
