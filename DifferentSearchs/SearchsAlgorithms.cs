@@ -13,7 +13,9 @@ namespace DifferentSearchs
         /// Метод сортировки путем прямого обмена
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-      public void  DirectExchange(int[] array)
+        /// /// <param name="countCompare">Счетчик сравнения</param>
+        /// /// <param name="countChang">Счетчик перестановок</param>
+        public void  DirectExchange(int[] array,ref long countCompare, ref long countChang )
      {
             bool flag = true;
             int counter = 1;
@@ -23,12 +25,14 @@ namespace DifferentSearchs
                 flag = false;
                 for (int i = 0; i < array.Length-counter; i++)
                 {
+                    countCompare++;
                     if (array[i] > array[i + 1])
                     {
                         temrory = array[i + 1];
                         array[i + 1] = array[i];
                         array[i] = temrory;
                         flag = true;
+                        countChang++;
                     }                    
                 }
                 counter++;
@@ -221,7 +225,11 @@ namespace DifferentSearchs
                 d = d  / 2;
             }
         }
-
+        /// <summary>
+        /// Сортировка Шелла.С интерфесом
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="dataGridView">Таблица</param>
         public void SortingByShell(int[] array,DataGridView dataGridView)
         {
         
