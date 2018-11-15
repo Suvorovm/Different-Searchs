@@ -201,24 +201,24 @@ namespace DifferentSearchs
         /// <param name="array">Сортируемый массив</param>
         public void SortingByShell(int[] array)
         {
-            int countOfCiclus = (int)Math.Floor((Math.Log(array.Length) / Math.Log(2))) - 1;
-            int bariear ,count,j= 0;
+            int countOfCiclus = 0;
+            int bariear ,temrory,j= 0;
             int index = 0;
-            int d = 3;
+            int d = array.Length/2;
             while(d>0)
             {
                 for (int i = 0; i < array.Length - d; i++)
                 {
                     j = i;
-                    while (j >= 0 && array[j] > array   [j + d])
+                    while (j >= 0 && array[j] > array[j + d])
                     {
-                        count = array[j];
+                        temrory = array[j];
                         array[j] = array[j + d];
-                        array[j + d] = count;
+                        array[j + d] = temrory;
                         j--;
                     }
                 }
-                d = (d - 1) / 2;
+                d = d  / 2;
             }
         }
 
