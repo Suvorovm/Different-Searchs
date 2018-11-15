@@ -119,9 +119,9 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.page.SuspendLayout();
             this.compareSorting.SuspendLayout();
             this.directExchange.SuspendLayout();
@@ -132,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDirectChange)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SortingByShell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // page
@@ -149,9 +150,9 @@
             // 
             // compareSorting
             // 
+            this.compareSorting.Controls.Add(this.numericUpDown1);
             this.compareSorting.Controls.Add(this.button3);
             this.compareSorting.Controls.Add(this.label9);
-            this.compareSorting.Controls.Add(this.domainUpDown1);
             this.compareSorting.Controls.Add(this.textBox15);
             this.compareSorting.Controls.Add(this.textBox14);
             this.compareSorting.Controls.Add(this.textBox13);
@@ -901,14 +902,6 @@
             this.textBox15.Size = new System.Drawing.Size(100, 22);
             this.textBox15.TabIndex = 22;
             // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Location = new System.Drawing.Point(315, 530);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.domainUpDown1.TabIndex = 23;
-            this.domainUpDown1.Text = "1000";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -928,6 +921,23 @@
             this.button3.Text = "Сортировать";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(313, 530);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 26;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -950,6 +960,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDirectChange)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SortingByShell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1049,7 +1060,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
