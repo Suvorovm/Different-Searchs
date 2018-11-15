@@ -218,7 +218,7 @@ namespace DifferentSearchs
                         j--;
                     }
                 }
-                d = (d - 1) / 2;
+                d = d  / 2;
             }
         }
 

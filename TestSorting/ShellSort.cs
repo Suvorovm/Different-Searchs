@@ -32,5 +32,15 @@ namespace TestSorting
         {
             SendTOShellSort(new int[] { 5, 161, 15, 15, 8, 2, 15, 51, 2 });
         }
+        [TestMethod]
+        public void TetsMetodMAss3()
+        {
+            SendTOShellSort(new int[] {8,89,65,2,6,4,8,9,15,6,48 });
+        }
+        [TestMethod]
+        public void TetsMetodMAss4()
+        {
+            SendTOShellSort(new int[] {8,8,6,9,2,5,6,8,4,5,3,6,8,7,9,5 });
+        }
     }
 }
