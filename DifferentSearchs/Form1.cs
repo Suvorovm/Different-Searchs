@@ -121,6 +121,23 @@ namespace DifferentSearchs
         private void button3_Click(object sender, EventArgs e)
         {
             var stopWatch = new Stopwatch();
+            int count = (int)numericUpDown1.Value;
+            int[] array = new int[count];
+            int[] coppyOfArray = new int[count];
+            var rnd = new Random();
+            for (int i = 0; i < count; i++)
+            {
+                array[i] = rnd.Next(0, 10000);
+            }
+            long counterCompare = 0;
+            long counterExchange = 0;
+            Array.Copy(array, coppyOfArray,count);
+            stopWatch.Start();
+            searchsAlgorithms.DirectExchange(coppyOfArray, ref counterCompare, ref counterExchange);
+            stopWatch.Stop();
+            textBox1.Text = counterCompare.ToString();
+            textBox2.Text = counterExchange.ToString();
+            textBox3.Text = stopWatch.Elapsed.Ticks.ToString();
 
         }
     }
