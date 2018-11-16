@@ -86,7 +86,7 @@ namespace DifferentSearchs
         /// Метод сортировки путем прямого включения
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void DirectInclude(int[] array)
+        public void DirectInclude(int[] array,ref long counterOfCompare,ref long counterOfChanges)
         {
             int index = 0;
             int value = 0;
@@ -98,7 +98,10 @@ namespace DifferentSearchs
                 {
                     array[index] = array[index - 1];
                     index--;
+                    counterOfChanges++;
+                    counterOfCompare++;
                 }
+                counterOfChanges++;
                 array[index] = value;// после выполнения сдвига, ставится за эллемент
             }
         }
@@ -205,11 +208,11 @@ namespace DifferentSearchs
         /// Сортировка Шелла.
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void SortingByShell(int[] array)
+        public void SortingByShell(int[] array,ref long countCompar,ref long countOfChanges)
         {
-            int countOfCiclus = 0;
-            int bariear ,temrory,j= 0;
-            int index = 0;
+           
+            int temrory,j= 0;
+       
             int d = array.Length/2;
             while(d>0)
             {
@@ -222,7 +225,10 @@ namespace DifferentSearchs
                         array[j] = array[j + d];
                         array[j + d] = temrory;
                         j--;
+                        countOfChanges++;
+                        countCompar++;
                     }
+                    countCompar++;
                 }
                 d = d  / 2;
             }
