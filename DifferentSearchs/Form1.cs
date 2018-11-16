@@ -36,6 +36,11 @@ namespace DifferentSearchs
             DataGridViewRow dataRowShell = new DataGridViewRow();
             SortingByShell.Rows.Add(dataRowShell);
             SortingByShell[0, 0].Value = "0 проход";
+
+            DataGridViewRow dataRowLine = new DataGridViewRow();
+            dataGridViewLine.Rows.Add(dataRowLine);
+            dataGridViewLine[0, 0].Value = "0 проход";
+
         }
 
         private void buttonSortDirectExchange_Click(object sender, EventArgs e)
@@ -176,6 +181,25 @@ namespace DifferentSearchs
             searchsAlgorithms.LineSorting(coppyOfArray);
             stopWatch.Stop();
             textBox15.Text = stopWatch.Elapsed.Ticks.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int[] array = new int[10];
+            for (int i = 1; i < array.Length; i++)
+            {
+                array[i - 1] = Int32.Parse(dataGridViewLine[i, 0].Value.ToString());
+            }
+            dataGridViewLine.Rows.Clear();
+            DataGridViewRow data = new DataGridViewRow();
+            dataGridViewLine.Rows.Add(data);
+            dataGridViewLine[0, 0].Value = "0 проход";
+            for (int i = 1; i < array.Length + 1; i++)
+            {
+                dataGridViewLine[i, 0].Value = array[i - 1];
+            }
+            dataGridViewLine.Refresh();
+            searchsAlgorithms.LineSorting(array, dataGridViewLine);
         }
     }
 }
