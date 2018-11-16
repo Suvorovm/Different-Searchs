@@ -53,6 +53,7 @@
     <Compile Include="DirectInclude.cs" />
     <Compile Include="DirectChange.cs" />
     <Compile Include="ShellSort.cs" />
+    <Compile Include="LineSorting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

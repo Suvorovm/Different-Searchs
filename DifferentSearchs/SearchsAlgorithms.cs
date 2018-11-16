@@ -133,7 +133,7 @@ namespace DifferentSearchs
         /// Сортировка путем прямого выбора
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void DirectChange(int[] array)
+        public void DirectChange(int[] array,ref long countertOfCompar,ref long counterOfChange)
         {
             if(array.Length == 0)
             {
@@ -147,7 +147,8 @@ namespace DifferentSearchs
             {
                 for (int i = 0; i <= needToLook; i++)
                 {
-                    if(max < array[i])
+                    countertOfCompar++;
+                    if (max < array[i])
                     {
                         max = array[i];
                         indexMax = i;
@@ -159,6 +160,7 @@ namespace DifferentSearchs
                 array[indexMax] = temprory;
                 needToLook--;
                 max = array[needToLook];
+                counterOfChange++;
             }
 
         }
@@ -252,6 +254,53 @@ namespace DifferentSearchs
                 AddTotabel(dataGridView, array, countOfcell);
                 countOfcell++;
                 d = d / 3;
+            }
+        }
+        /// <summary>
+        /// Линейная сортировка
+        /// </summary>
+        /// <param name="array">Сортируемый массив. Значения не больше 100</param>
+        public void LineSorting(int[] array)
+        {
+            const int barear = 101;
+            int[] helpArray = new int[100];
+            for (int i = 0; i < helpArray.Length; i++)
+            {
+                helpArray[i] = 101;
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > barear)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    if (helpArray[array[i]] == barear)
+                    {
+                        helpArray[array[i]] = 1;
+
+                    }
+                    else
+                    {
+                        helpArray[array[i]] += 1;
+                    }
+                }
+            }
+            int counter = 0;
+            int countOfciclus = 0;
+            for (int i = 0; i < helpArray.Length; i++)
+            {
+                if (helpArray[i] != barear)
+                {
+                    countOfciclus = helpArray[i];
+                    while (countOfciclus > 0)
+                    {
+                        array[counter] = i;
+                        counter++;
+                        countOfciclus--;
+                    }
+                }
             }
         }
 
