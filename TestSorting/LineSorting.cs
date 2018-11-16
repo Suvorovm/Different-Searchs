@@ -6,39 +6,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestSorting
 {
     [TestClass]
-    public class UnitTest1
+    public class LineSorting
     {
-        public void SendToDirectChange(int[] input)
+        public void SentToLineSort(int[] input)
         {
             SearchsAlgorithms algorithms = new SearchsAlgorithms();
             int[] actual = new int[input.Length];
             Array.Copy(input, actual, input.Length);
             Array.Sort(actual);
-            long a = 0, b = 0;
-            algorithms.DirectChange(input,ref b,ref a);
-            for (int i = 0; i < actual.Length; i++)
-            {
-                Debug.Write(input[i] + " ");
-            }
+            algorithms.LineSorting(input);
+           
             CollectionAssert.AreEqual(input, actual);
-
         }
         [TestMethod]
         public void TestMethod1()
         {
-            SendToDirectChange(new int[] { 1, 8, 2, 6, 72 });
+            SentToLineSort(new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 });
         }
-
         [TestMethod]
-        public void testMetodSorted()
+        public void TestMethod2()
         {
-            SendToDirectChange(new int[]{1,2,3,4,5,6,0});
+            SentToLineSort(new int[] { 10,10,10,10,1,0,10,10,10 });
         }
-
         [TestMethod]
-        public void testMetodEmpty()
+        public void TestMethodEmty()
         {
-            SendToDirectChange(new int[] {});
+            SentToLineSort(new int[] { });
         }
     }
 }

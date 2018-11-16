@@ -127,7 +127,7 @@ namespace DifferentSearchs
             var rnd = new Random();
             for (int i = 0; i < count; i++)
             {
-                array[i] = rnd.Next(0, 10000);
+                array[i] = rnd.Next(0, 100);
             }
             long counterCompare = 0;
             long counterExchange = 0;
@@ -139,6 +139,43 @@ namespace DifferentSearchs
             textBox2.Text = counterExchange.ToString();
             textBox3.Text = stopWatch.Elapsed.Ticks.ToString();
 
+            counterCompare = 0;
+            counterExchange = 0;
+            Array.Copy(array, coppyOfArray, count);
+            stopWatch.Restart();
+            searchsAlgorithms.DirectChange(coppyOfArray,ref counterCompare,ref counterExchange);
+            stopWatch.Stop();
+            textBox4.Text = counterCompare.ToString();
+            textBox5.Text = counterExchange.ToString();
+            textBox6.Text = stopWatch.Elapsed.Ticks.ToString();
+
+            counterCompare = 0;
+            counterExchange = 0;
+            Array.Copy(array, coppyOfArray, count);
+            stopWatch.Restart();
+            searchsAlgorithms.DirectInclude(coppyOfArray, ref counterCompare, ref counterExchange);
+            stopWatch.Stop();
+            textBox7.Text = counterCompare.ToString();
+            textBox8.Text = counterExchange.ToString();
+            textBox9.Text = stopWatch.Elapsed.Ticks.ToString();
+
+            counterCompare = 0;
+            counterExchange = 0;
+            Array.Copy(array, coppyOfArray, count);
+            stopWatch.Restart();
+            searchsAlgorithms.SortingByShell(coppyOfArray, ref counterCompare, ref counterExchange);
+            stopWatch.Stop();
+            textBox10.Text = counterCompare.ToString();
+            textBox11.Text = counterExchange.ToString();
+            textBox12.Text = stopWatch.Elapsed.Ticks.ToString();
+
+            counterCompare = 0;
+            counterExchange = 0;
+            Array.Copy(array, coppyOfArray, count);
+            stopWatch.Restart();
+            searchsAlgorithms.LineSorting(coppyOfArray);
+            stopWatch.Stop();
+            textBox15.Text = stopWatch.Elapsed.Ticks.ToString();
         }
     }
 }

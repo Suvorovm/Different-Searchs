@@ -86,7 +86,7 @@ namespace DifferentSearchs
         /// Метод сортировки путем прямого включения
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void DirectInclude(int[] array)
+        public void DirectInclude(int[] array,ref long counterOfCompare,ref long counterOfChanges)
         {
             int index = 0;
             int value = 0;
@@ -98,7 +98,10 @@ namespace DifferentSearchs
                 {
                     array[index] = array[index - 1];
                     index--;
+                    counterOfChanges++;
+                    counterOfCompare++;
                 }
+                counterOfChanges++;
                 array[index] = value;// после выполнения сдвига, ставится за эллемент
             }
         }
@@ -133,7 +136,7 @@ namespace DifferentSearchs
         /// Сортировка путем прямого выбора
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void DirectChange(int[] array)
+        public void DirectChange(int[] array,ref long countertOfCompar,ref long counterOfChange)
         {
             if(array.Length == 0)
             {
@@ -147,7 +150,8 @@ namespace DifferentSearchs
             {
                 for (int i = 0; i <= needToLook; i++)
                 {
-                    if(max < array[i])
+                    countertOfCompar++;
+                    if (max < array[i])
                     {
                         max = array[i];
                         indexMax = i;
@@ -159,6 +163,7 @@ namespace DifferentSearchs
                 array[indexMax] = temprory;
                 needToLook--;
                 max = array[needToLook];
+                counterOfChange++;
             }
 
         }
@@ -203,11 +208,11 @@ namespace DifferentSearchs
         /// Сортировка Шелла.
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void SortingByShell(int[] array)
+        public void SortingByShell(int[] array,ref long countCompar,ref long countOfChanges)
         {
-            int countOfCiclus = 0;
-            int bariear ,temrory,j= 0;
-            int index = 0;
+           
+            int temrory,j= 0;
+       
             int d = array.Length/2;
             while(d>0)
             {
@@ -220,7 +225,10 @@ namespace DifferentSearchs
                         array[j] = array[j + d];
                         array[j + d] = temrory;
                         j--;
+                        countOfChanges++;
+                        countCompar++;
                     }
+                    countCompar++;
                 }
                 d = d  / 2;
             }
@@ -252,6 +260,53 @@ namespace DifferentSearchs
                 AddTotabel(dataGridView, array, countOfcell);
                 countOfcell++;
                 d = d / 3;
+            }
+        }
+        /// <summary>
+        /// Линейная сортировка
+        /// </summary>
+        /// <param name="array">Сортируемый массив. Значения не больше 100</param>
+        public void LineSorting(int[] array)
+        {
+            const int barear = 101;
+            int[] helpArray = new int[100];
+            for (int i = 0; i < helpArray.Length; i++)
+            {
+                helpArray[i] = 101;
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > barear)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    if (helpArray[array[i]] == barear)
+                    {
+                        helpArray[array[i]] = 1;
+
+                    }
+                    else
+                    {
+                        helpArray[array[i]] += 1;
+                    }
+                }
+            }
+            int counter = 0;
+            int countOfciclus = 0;
+            for (int i = 0; i < helpArray.Length; i++)
+            {
+                if (helpArray[i] != barear)
+                {
+                    countOfciclus = helpArray[i];
+                    while (countOfciclus > 0)
+                    {
+                        array[counter] = i;
+                        counter++;
+                        countOfciclus--;
+                    }
+                }
             }
         }
 
