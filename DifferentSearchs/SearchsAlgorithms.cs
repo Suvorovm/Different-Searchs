@@ -310,5 +310,50 @@ namespace DifferentSearchs
             }
         }
 
+        public void LineSorting(int[] array,DataGridView dataGridView)
+        {
+            const int barear = 101;
+            int[] helpArray = new int[100];
+            for (int i = 0; i < helpArray.Length; i++)
+            {
+                helpArray[i] = 101;
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > barear)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    if (helpArray[array[i]] == barear)
+                    {
+                        helpArray[array[i]] = 1;
+
+                    }
+                    else
+                    {
+                        helpArray[array[i]] += 1;
+                    }
+                }
+            }
+            int counter = 0;
+            int countOfciclus = 0;
+            for (int i = 0; i < helpArray.Length; i++)
+            {
+                if (helpArray[i] != barear)
+                {
+                    countOfciclus = helpArray[i];
+                    while (countOfciclus > 0)
+                    {
+                        array[counter] = i;
+                        counter++;
+                        countOfciclus--;
+                    }
+                }
+            }
+            AddTotabel(dataGridView, array, 1);
+        }
+
     }
 }
