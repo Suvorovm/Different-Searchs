@@ -213,7 +213,7 @@ namespace DifferentSearchs
            
             int temrory,j= 0;
        
-            int d = array.Length/2;
+            int d = array.Length/3;
             while(d>0)
             {
                 for (int i = 0; i < array.Length - d; i++)
@@ -230,7 +230,7 @@ namespace DifferentSearchs
                     }
                     countCompar++;
                 }
-                d = d  / 2;
+                d = d  / 3;
             }
         }
         /// <summary>

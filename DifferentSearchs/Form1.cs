@@ -107,7 +107,7 @@ namespace DifferentSearchs
         private void buttonShell_Click(object sender, EventArgs e)
         {
             int[] array = new int[20];
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 1; i < array.Length+1; i++)
             {
                 array[i - 1] = Int32.Parse(SortingByShell[i, 0].Value.ToString());
             }
@@ -186,7 +186,7 @@ namespace DifferentSearchs
         private void button4_Click(object sender, EventArgs e)
         {
             int[] array = new int[10];
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 1; i < array.Length+1; i++)
             {
                 array[i - 1] = Int32.Parse(dataGridViewLine[i, 0].Value.ToString());
             }
