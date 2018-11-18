@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestSorting
 {
     [TestClass]
-    public class UnitTest1
+    public class DirectChange
     {
         public void SendToDirectChange(int[] input)
         {
@@ -39,6 +39,17 @@ namespace TestSorting
         public void testMetodEmpty()
         {
             SendToDirectChange(new int[] {});
+        }
+
+        [TestMethod]
+        public void testMetodReverseArray()
+        {
+            SendToDirectChange(new int[] { 4, 3, 2, 1, 0 });
+        }
+        [TestMethod]
+        public void tesMetodSOMany()
+        {
+            SendToDirectChange(new int[] { -10, 5, 5, 1, 5, 55, 88, 15, 66, 5, 54, -1 });
         }
     }
 }

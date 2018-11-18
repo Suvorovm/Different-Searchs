@@ -101,7 +101,7 @@ namespace DifferentSearchs
                 dataGridViewDirectChange[i, 0].Value = array[i - 1];
             }
             dataGridViewDirectChange.Refresh();
-            searchsAlgorithms.DirectInclude(array, dataGridViewDirectChange);
+            searchsAlgorithms.DirectChange(array, dataGridViewDirectChange);
         }
 
         private void buttonShell_Click(object sender, EventArgs e)
