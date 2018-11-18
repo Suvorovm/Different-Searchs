@@ -13,7 +13,8 @@ namespace TestSorting
             int[] actual = new int[input.Length];
             Array.Copy(input, actual, input.Length);
             Array.Sort(actual);
-            algorithms.DirectInclude(input);
+            long a = 0, b = 0;
+            algorithms.DirectInclude(input, ref a, ref b);
             CollectionAssert.AreEqual(input, actual);
         }
 

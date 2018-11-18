@@ -15,7 +15,8 @@ namespace TestSorting
             int[] actual = new int[input.Length];
             Array.Copy(input, actual, input.Length);
             Array.Sort(actual);
-            algorithms.SortingByShell(input);
+            long a = 0, b = 0;
+            algorithms.SortingByShell(input,ref a,ref b);
             for (int i = 0; i < actual.Length; i++)
             {
                 Debug.Write(input[i] + " ");

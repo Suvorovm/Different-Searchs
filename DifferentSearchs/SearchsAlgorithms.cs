@@ -162,7 +162,8 @@ namespace DifferentSearchs
                 array[needToLook] = array[indexMax];
                 array[indexMax] = temprory;
                 needToLook--;
-                max = array[needToLook];
+                indexMax = 0;
+                max = array[indexMax];
                 counterOfChange++;
             }
 
@@ -179,7 +180,7 @@ namespace DifferentSearchs
             {
                 throw new ArgumentException();
             }
-            int cell= 1;
+            int cell = 1;
             int needToLook = array.Length - 1;
             int max = array[0];
             int indexMax = 0;
@@ -187,7 +188,7 @@ namespace DifferentSearchs
             while (needToLook > 0)
             {
                 for (int i = 0; i <= needToLook; i++)
-                {
+                {                   
                     if (max < array[i])
                     {
                         max = array[i];
@@ -198,9 +199,11 @@ namespace DifferentSearchs
                 temprory = array[needToLook];
                 array[needToLook] = array[indexMax];
                 array[indexMax] = temprory;
-                needToLook--;
-                max = array[needToLook];
                 AddTotabel(dataGridView, array, cell);
+                needToLook--;
+                cell++;
+                indexMax = 0;
+                max = array[indexMax];               
             }
 
         }
@@ -213,7 +216,7 @@ namespace DifferentSearchs
            
             int temrory,j= 0;
        
-            int d = array.Length/2;
+            int d = array.Length/3;
             while(d>0)
             {
                 for (int i = 0; i < array.Length - d; i++)
@@ -230,7 +233,7 @@ namespace DifferentSearchs
                     }
                     countCompar++;
                 }
-                d = d  / 2;
+                d = d  / 3;
             }
         }
         /// <summary>

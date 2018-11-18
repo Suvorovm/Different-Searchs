@@ -123,7 +123,6 @@
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridViewLine = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +135,7 @@
             this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             this.page.SuspendLayout();
             this.compareSorting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -251,6 +251,7 @@
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(100, 22);
             this.textBox14.TabIndex = 21;
+            this.textBox14.Text = "-";
             // 
             // textBox13
             // 
@@ -258,6 +259,7 @@
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(100, 22);
             this.textBox13.TabIndex = 20;
+            this.textBox13.Text = "-";
             // 
             // textBox12
             // 
@@ -967,17 +969,6 @@
             this.tabPage2.Text = "Линейная";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(395, 511);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 54);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Сортировть";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // dataGridViewLine
             // 
             this.dataGridViewLine.AllowUserToAddRows = false;
@@ -1073,6 +1064,17 @@
             // 
             this.dataGridViewTextBoxColumn44.HeaderText = "";
             this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(395, 511);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(199, 54);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Сортировть";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
