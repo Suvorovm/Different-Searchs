@@ -15,7 +15,7 @@ namespace TestSorting
             Array.Copy(input, actual, input.Length);
             Array.Sort(actual);
             long a = 0, b = 0;
-            algorithms.DirectChange(input,ref b,ref a);
+            algorithms.DirectChange(input);
             for (int i = 0; i < actual.Length; i++)
             {
                 Debug.Write(input[i] + " ");
