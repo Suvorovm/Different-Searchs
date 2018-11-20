@@ -14,7 +14,7 @@ namespace TestSorting
             Array.Copy(input, actual,input.Length);
             Array.Sort(actual);
             long a = 0, b = 0;
-            algorithms.DirectExchange(input,ref a,ref b);
+            algorithms.DirectExchange(input);
             CollectionAssert.AreEqual(input, actual);
 
         } 

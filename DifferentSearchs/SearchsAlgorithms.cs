@@ -15,8 +15,10 @@ namespace DifferentSearchs
         /// <param name="array">Сортируемый массив</param>
         /// /// <param name="countCompare">Счетчик сравнения</param>
         /// /// <param name="countChang">Счетчик перестановок</param>
-        public void  DirectExchange(int[] array,ref long countCompare, ref long countChang )
+        public (int countCompare, int countChang)  DirectExchange(int[] array )
      {
+            int countCompare = 0;
+            int countChang = 0;
             bool flag = true;
             int counter = 1;
             int temrory = 0;
@@ -37,6 +39,7 @@ namespace DifferentSearchs
                 }
                 counter++;
             }
+            return (countCompare, countChang);
        }
         /// <summary>
        /// Добавление в визуальный компонент
@@ -86,24 +89,28 @@ namespace DifferentSearchs
         /// Метод сортировки путем прямого включения
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void DirectInclude(int[] array,ref long counterOfCompare,ref long counterOfChanges)
+        public (int countCompare, int countChang) DirectInclude(int[] array)
         {
+            int countCompare = 0;
+            int countChang = 0;
             int index = 0;
             int value = 0;
-            for (int i = 1; i < array.Length; i++)
+            
+            for (int i = 2; i < array.Length; i++)
             {
                 index = i;
-                value = array[i];
-                while ((index>0)&& (value<array[index-1]))
+                array[0] = array[i];
+                while ((index > 0) && (array[0] < array[index - 1]))
                 {
                     array[index] = array[index - 1];
                     index--;
-                    counterOfChanges++;
-                    counterOfCompare++;
+                    countCompare++;
+                    countChang++;
                 }
-                counterOfChanges++;
-                array[index] = value;// после выполнения сдвига, ставится за эллемент
+                countChang++;
+                array[index] = array[0];// ;// после выполнения сдвига, ставится за эллемент
             }
+            return (countCompare, countChang);
         }
         /// <summary>
         /// Метод сортировки путем прямого включения.Сортировка для работы с интерфесом
@@ -115,20 +122,25 @@ namespace DifferentSearchs
             int index = 0;
             int barier = 0;//барьер
             int numOfcell = 1;
-            for (int i = 1; i < array.Length; i++)
+            int[] copyArray = new int[10];
+            for (int i = 2; i < array.Length; i++)
             {
+
                 index = i;
-                barier = array[i];
-                while ((index > 0) && (barier < array[index - 1]))
+                array[0] = array[i];
+                while ((index > 0) && (array[0] < array[index - 1]))
                 {
                     array[index] = array[index - 1];
                     index--;
-                }
-                AddTotabel(dataGridView,array, numOfcell);
+                }                              
+               
+                array[index] = array[0];
+                Array.Copy(array, 1, copyArray, 0, copyArray.Length);
+                AddTotabel(dataGridView, copyArray, numOfcell);
                 numOfcell++;
-                array[index] = barier;// после выполнения сдвига, ставится за эллемент
             }
-            AddTotabel(dataGridView, array, numOfcell);
+          
+           
         }
 
 
@@ -136,9 +148,11 @@ namespace DifferentSearchs
         /// Сортировка путем прямого выбора
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void DirectChange(int[] array,ref long countertOfCompar,ref long counterOfChange)
+        public (int countCompare, int countChang) DirectChange(int[] array)
         {
-            if(array.Length == 0)
+            int countertOfCompar = 0;
+            int counterOfChange = 0;
+            if (array.Length == 0)
             {
                 throw new ArgumentException();
             }
@@ -166,7 +180,7 @@ namespace DifferentSearchs
                 max = array[indexMax];
                 counterOfChange++;
             }
-
+            return (countertOfCompar, counterOfChange);
         }
 
         /// <summary>
@@ -211,30 +225,35 @@ namespace DifferentSearchs
         /// Сортировка Шелла.
         /// </summary>
         /// <param name="array">Сортируемый массив</param>
-        public void SortingByShell(int[] array,ref long countCompar,ref long countOfChanges)
+        public (long compare, long changes) SortingByShell(int[] array)
         {
-           
-            int temrory,j= 0;
-       
-            int d = array.Length/3;
-            while(d>0)
+            int counterCompare = 0;
+            int counterChenges = 0;
+            int t = (int)Math.Floor(Math.Log(array.Length) / Math.Log(2)) - 1;
+            int step = 1;
+            for (int i = 0; i <= t; i++)
             {
-                for (int i = 0; i < array.Length - d; i++)
-                {
-                    j = i;
-                    while (j >= 0 && array[j] > array[j + d])
-                    {
-                        temrory = array[j];
-                        array[j] = array[j + d];
-                        array[j + d] = temrory;
-                        j--;
-                        countOfChanges++;
-                        countCompar++;
-                    }
-                    countCompar++;
-                }
-                d = d  / 3;
+                step = 2 * step + 1;
             }
+            while (step > 0)
+            {
+                int i, j;
+                for (i = step; i < array.Length; i++)
+                {
+                    int value = array[i];
+                    for (j = i - step; (j >= 0) && (array[j] > value); j -= step)
+                    {
+                        array[j + step] = array[j];
+                        counterCompare++;
+                        counterChenges++;
+                    }
+                    counterCompare++;
+                    array[j + step] = value;
+                }
+                step /= 2;
+                counterCompare++;
+            }
+            return (counterCompare, counterChenges);
         }
         /// <summary>
         /// Сортировка Шелла.С интерфесом
@@ -243,27 +262,27 @@ namespace DifferentSearchs
         /// <param name="dataGridView">Таблица</param>
         public void SortingByShell(int[] array,DataGridView dataGridView)
         {
-        
-            int  temrory, j = 0;
-            int countOfcell = 1;
-            int d = array.Length / 3;
-            while (d > 0)
+            int cell = 1;
+            int t = (int)Math.Floor(Math.Log(array.Length) / Math.Log(2)) - 1;
+            int step = 1;
+            for (int i = 0; i < t; i++)
             {
-                for (int i = 0; i < array.Length - d; i++)
-                {
-                    j = i;
-                    while (j >= 0 && array[j] > array[j + d])
-                    {
-                        temrory = array[j];
-                        array[j] = array[j + d];
-                        array[j + d] = temrory;
-                        j--;
-                    }
-                }
-                AddTotabel(dataGridView, array, countOfcell);
-                countOfcell++;
-                d = d / 3;
+                step = 2 * step + 1;
             }
+            while (step > 0)
+            {
+                int i, j;
+                for (i = step; i < array.Length; i++)
+                {
+                    int value = array[i];
+                    for (j = i - step; (j >= 0) && (array[j] > value); j -= step)
+                        array[j + step] = array[j];
+                    array[j + step] = value;
+                }
+                AddTotabel(dataGridView, array, cell);
+                cell++;
+                step /= 2;
+            }            
         }
         /// <summary>
         /// Линейная сортировка
