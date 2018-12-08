@@ -13,6 +13,7 @@ namespace DifferentSearchs
 {
     public partial class Form1 : Form
     {
+        Random rndAll = new Random();
         SearchsAlgorithms searchsAlgorithms;
         public Form1()
         {
@@ -46,12 +47,13 @@ namespace DifferentSearchs
         private void buttonSortDirectExchange_Click(object sender, EventArgs e)
         {
             int[] array = new int[10];
-
-
-            for (int i = 1; i < array.Length + 1; i++)
+           
+            for (int i = 0; i < array.Length; i++)
             {
-                array[i - 1] = Int32.Parse(dataGridView1[i, 0].Value.ToString());
+                array[i] = rndAll.Next(0, 99);
             }
+
+           
             dataGridView1.Rows.Clear();
             DataGridViewRow dataRow = new DataGridViewRow();                     
             dataGridView1.Rows.Add(dataRow);
@@ -68,10 +70,11 @@ namespace DifferentSearchs
         {
             int[] array = new int[11];
             array[0] = 0;
-            for (int i = 2; i < array.Length+1; i++)
+            for (int i = 1; i < array.Length; i++)
             {
-                array[i - 1] = Int32.Parse(dataGridDirectInclude[i-1, 0].Value.ToString());
+                array[i] = rndAll.Next(0, 99);
             }
+           
             dataGridDirectInclude.Rows.Clear();
             DataGridViewRow data = new DataGridViewRow();
             dataGridDirectInclude.Rows.Add(data);
@@ -88,9 +91,9 @@ namespace DifferentSearchs
         {
             int[] array = new int[10];
 
-            for (int i = 1; i < array.Length + 1; i++)
+            for (int i = 0; i < array.Length ; i++)
             {
-                array[i - 1] = Int32.Parse(dataGridViewDirectChange[i, 0].Value.ToString());
+                array[i] = rndAll.Next(0, 99);
             }
             dataGridViewDirectChange.Rows.Clear();
             DataGridViewRow data = new DataGridViewRow();
@@ -107,9 +110,9 @@ namespace DifferentSearchs
         private void buttonShell_Click(object sender, EventArgs e)
         {
             int[] array = new int[20];
-            for (int i = 1; i < array.Length+1; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                array[i - 1] = Int32.Parse(SortingByShell[i, 0].Value.ToString());
+                array[i] = rndAll.Next(0, 99);
             }
             SortingByShell.Rows.Clear();
             DataGridViewRow data = new DataGridViewRow();
@@ -186,9 +189,9 @@ namespace DifferentSearchs
         private void button4_Click(object sender, EventArgs e)
         {
             int[] array = new int[10];
-            for (int i = 1; i < array.Length+1; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                array[i - 1] = Int32.Parse(dataGridViewLine[i, 0].Value.ToString());
+                array[i] = rndAll.Next(0, 10);
             }
             dataGridViewLine.Rows.Clear();
             DataGridViewRow data = new DataGridViewRow();

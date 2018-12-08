@@ -230,8 +230,8 @@ namespace DifferentSearchs
             int counterCompare = 0;
             int counterChenges = 0;
             int t = (int)Math.Floor(Math.Log(array.Length) / Math.Log(2)) - 1;
-            int step = 1;
-            for (int i = 0; i <= t; i++)
+            int step = 0;
+            for (int i = 0; i < t; i++)
             {
                 step = 2 * step + 1;
             }
@@ -264,7 +264,7 @@ namespace DifferentSearchs
         {
             int cell = 1;
             int t = (int)Math.Floor(Math.Log(array.Length) / Math.Log(2)) - 1;
-            int step = 1;
+            int step = 0;
             for (int i = 0; i < t; i++)
             {
                 step = 2 * step + 1;
@@ -334,11 +334,11 @@ namespace DifferentSearchs
 
         public void LineSorting(int[] array,DataGridView dataGridView)
         {
-            const int barear = 101;
-            int[] helpArray = new int[100];
+            const int barear = 11;
+            int[] helpArray = new int[10];
             for (int i = 0; i < helpArray.Length; i++)
             {
-                helpArray[i] = 101;
+                helpArray[i] = 11;
             }
             for (int i = 0; i < array.Length; i++)
             {
@@ -375,7 +375,10 @@ namespace DifferentSearchs
                 }
             }
             AddTotabel(dataGridView, array, 1);
+            AddTotabel(dataGridView, helpArray, 2);
+            dataGridView[0, 2].Value = "Массив Б";
         }
+        
 
     }
 }
